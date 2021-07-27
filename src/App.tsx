@@ -12,14 +12,14 @@ function App() {
   useEffect(() => {
     fetch("https://api.wheretheiss.at/v1/satellites/25544").then(
       async (res) => {
-        const { timestamp, longitude, latitude } = await res.json();
+        const { timestamp, latitude, longitude } = await res.json();
         // date
         const date: Date = fromUnixTime(timestamp);
         setDate(format(date, standardFormat));
 
         // position
         if (longitude && latitude) {
-          setPosition([longitude, latitude]);
+          setPosition([latitude, longitude]);
         }
       }
     );
@@ -32,8 +32,11 @@ function App() {
         {date ? (
           <div>
             <h3>{date}</h3>
+            <p style={{ color: "gray" }}>
+              [latitude, longitude] = {position.toString()}
+            </p>
             <MapContainer
-              style={{ marginTop: "60px" }}
+              style={{ marginTop: "40px" }}
               center={position}
               zoom={0}
             >
