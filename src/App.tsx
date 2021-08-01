@@ -1,6 +1,7 @@
 import { format, fromUnixTime } from "date-fns";
 import { LatLngExpression } from "leaflet";
 import { useEffect, useState } from "react";
+import { GoMarkGithub } from "react-icons/go";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import "./App.css";
 
@@ -53,13 +54,17 @@ function App() {
           <div>loading ... </div>
         )}
 
-        <a
-          href="https://github.com/jingxian01/iss-tracker"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button style={{ marginTop: "20px" }}>GitHub Repository</button>
-        </a>
+        <div className="icon">
+          <a
+            href="https://github.com/jingxian01/iss-tracker"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button className="btn">
+              <GoMarkGithub size="2em" />
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   );
