@@ -28,7 +28,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>International Space Station tracker</h1>
+      <div className="box">
+        <h1>International Space Station tracker</h1>
+      </div>
       <div>
         {date ? (
           <div>
